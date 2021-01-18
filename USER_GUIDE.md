@@ -42,7 +42,7 @@ Here are the details you'll need connect:
 
 Try a test query to see that everything is working. This query
 gives us the name of every neighborhood geometry in the database
-sortd in the ascending direction:
+sorted in the ascending direction:
 
 ```sql
 SELECT name FROM geometries.neighborhoods ORDER BY name ASC;
