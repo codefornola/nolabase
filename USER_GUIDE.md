@@ -78,7 +78,7 @@ Results:
 DataSources are externally managed sources of data that are regularly pulled into the Nolabase. We try to keep the convention of creating a [postgres schema](https://www.postgresql.org/docs/9.1/ddl-schemas.html) for each DataSource in order to keep them isolated. If you aren't familiar with it, think of it as a namespace. This is where the tables, functions, triggers, etc live for that DataSource. The one place we break this convention is
 `geometries` which is a special namespace for abstract geographic boundaries (think neighborhoods, police districts, etc) although I think we may change this before launching.
 
-* Schema: `gemoetries`
+* Schema: `geometries`
   * Table: `neighborhoods`
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/neighborhood-statistical-areas)
   * Table: `council_districts`
