@@ -1,4 +1,4 @@
-package councildistricts
+package votingprecincts
 
 import (
 	"bytes"
@@ -6,36 +6,36 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/bhelx/nolabase/infra"
+	"github.com/codefornola/nolabase/internal/infra"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/sirupsen/logrus"
 )
 
 const (
-	ScraperName         = "COUNCIL-DISTRICTS"
-	CouncilDistrictsURL = "https://opendata.arcgis.com/datasets/4593a994e7644bcc91d9e1c096df1734_0.geojson"
+	ScraperName        = "VOTING-PRECINCTS"
+	VotingPrecinctsURL = "https://opendata.arcgis.com/datasets/ca0f4261673541d798551f5cddc54bd6_1.geojson"
 )
 
-var log = logrus.WithField("package", "councildistricts")
+var log = logrus.WithField("package", "votingprecincts")
 
-type CouncilDistrictScraper struct {
+type VotingPrecinctsScraper struct {
 	repo *Repo
 }
 
-func NewScraper() *CouncilDistrictScraper {
-	return &CouncilDistrictScraper{}
+func NewScraper() *VotingPrecinctsScraper {
+	return &VotingPrecinctsScraper{}
 }
 
-func (s *CouncilDistrictScraper) Configure(pool *pgxpool.Pool) (err error) {
+func (s *VotingPrecinctsScraper) Configure(pool *pgxpool.Pool) (err error) {
 	s.repo = NewRepo(pool)
 	return err
 }
 
-func (s *CouncilDistrictScraper) EnqueueJobs() ([]infra.Job, error) {
+func (s *VotingPrecinctsScraper) EnqueueJobs() ([]infra.Job, error) {
 	var jobs []infra.Job
 
 	job := infra.Job{
-		Url:         CouncilDistrictsURL,
+		Url:         VotingPrecinctsURL,
 		ScraperName: ScraperName,
 	}
 	jobs = append(jobs, job)
@@ -43,7 +43,7 @@ func (s *CouncilDistrictScraper) EnqueueJobs() ([]infra.Job, error) {
 	return jobs, nil
 }
 
-func (s *CouncilDistrictScraper) MakeRequest(j infra.Job) (*http.Request, error) {
+func (s *VotingPrecinctsScraper) MakeRequest(j infra.Job) (*http.Request, error) {
 	req, err := http.NewRequest("GET", j.Url, nil)
 	if err != nil {
 		return nil, err
@@ -52,7 +52,7 @@ func (s *CouncilDistrictScraper) MakeRequest(j infra.Job) (*http.Request, error)
 	return req, nil
 }
 
-func (s *CouncilDistrictScraper) HandleResponse(j infra.Job, resp *http.Response, httpErr error) (*infra.Job, error) {
+func (s *VotingPrecinctsScraper) HandleResponse(j infra.Job, resp *http.Response, httpErr error) (*infra.Job, error) {
 	scraperLog := log.WithField("job", j.Id).WithField("url", resp.Request.URL.String())
 	// if we have an http error just return it
 	if httpErr != nil {
@@ -80,13 +80,13 @@ func (s *CouncilDistrictScraper) HandleResponse(j infra.Job, resp *http.Response
 		return nil, err
 	}
 
-	districts, err := ParseCouncilDistricts(body.Bytes())
+	precincts, err := ParseVotingPrecincts(body.Bytes())
 	if err != nil {
 		scraperLog.Error(err)
 		return nil, err
 	}
 
-	err = s.repo.StoreCouncilDistricts(districts)
+	err = s.repo.StoreVotingPrecincts(precincts)
 	if err != nil {
 		scraperLog.Error(err)
 		return nil, err

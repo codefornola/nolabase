@@ -9,7 +9,7 @@ This respository contains all of the tools to manage the database as well as the
 ## Goals
 
 1. Help the community answer questions about the city
-2. Liberate public data from walled gardens (e.g. see the [Tax Assessor dataset](./assessor/README.md))
+2. Liberate public data from walled gardens (e.g. see the [Tax Assessor dataset](./internal/datasources/assessor/README.md))
 
 We hope the nolabase is not just a tool, but a community. By making it easy to use and
 providing a single interface to query the data, we hope that disparate members of the community can help

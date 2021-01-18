@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/bhelx/nolabase/infra"
+	"github.com/codefornola/nolabase/internal/infra"
 	"github.com/spf13/cobra"
 )
 

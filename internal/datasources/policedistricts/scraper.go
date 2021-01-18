@@ -1,4 +1,4 @@
-package neighborhoods
+package policedistricts
 
 import (
 	"bytes"
@@ -6,36 +6,36 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/bhelx/nolabase/infra"
+	"github.com/codefornola/nolabase/internal/infra"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/sirupsen/logrus"
 )
 
 const (
-	ScraperName      = "NEIGHBORHOODS"
-	NeighborhoodsURL = "https://opendata.arcgis.com/datasets/e7daa4c977d14e1b9e2fa4d7aff81e59_0.geojson"
+	ScraperName        = "POLICE-DISTRICTS"
+	PoliceDistrictsURL = "https://opendata.arcgis.com/datasets/140759858aa14bb6a5a2fe099ccf4c07_0.geojson"
 )
 
-var log = logrus.WithField("package", "neighborhoods")
+var log = logrus.WithField("package", "policedistricts")
 
-type NeighborhoodScraper struct {
+type PoliceDistrictsScraper struct {
 	repo *Repo
 }
 
-func NewScraper() *NeighborhoodScraper {
-	return &NeighborhoodScraper{}
+func NewScraper() *PoliceDistrictsScraper {
+	return &PoliceDistrictsScraper{}
 }
 
-func (s *NeighborhoodScraper) Configure(pool *pgxpool.Pool) (err error) {
+func (s *PoliceDistrictsScraper) Configure(pool *pgxpool.Pool) (err error) {
 	s.repo = NewRepo(pool)
 	return err
 }
 
-func (s *NeighborhoodScraper) EnqueueJobs() ([]infra.Job, error) {
+func (s *PoliceDistrictsScraper) EnqueueJobs() ([]infra.Job, error) {
 	var jobs []infra.Job
 
 	job := infra.Job{
-		Url:         NeighborhoodsURL,
+		Url:         PoliceDistrictsURL,
 		ScraperName: ScraperName,
 	}
 	jobs = append(jobs, job)
@@ -43,7 +43,7 @@ func (s *NeighborhoodScraper) EnqueueJobs() ([]infra.Job, error) {
 	return jobs, nil
 }
 
-func (s *NeighborhoodScraper) MakeRequest(j infra.Job) (*http.Request, error) {
+func (s *PoliceDistrictsScraper) MakeRequest(j infra.Job) (*http.Request, error) {
 	req, err := http.NewRequest("GET", j.Url, nil)
 	if err != nil {
 		return nil, err
@@ -52,7 +52,7 @@ func (s *NeighborhoodScraper) MakeRequest(j infra.Job) (*http.Request, error) {
 	return req, nil
 }
 
-func (s *NeighborhoodScraper) HandleResponse(j infra.Job, resp *http.Response, httpErr error) (*infra.Job, error) {
+func (s *PoliceDistrictsScraper) HandleResponse(j infra.Job, resp *http.Response, httpErr error) (*infra.Job, error) {
 	scraperLog := log.WithField("job", j.Id).WithField("url", resp.Request.URL.String())
 	// if we have an http error just return it
 	if httpErr != nil {
@@ -80,13 +80,13 @@ func (s *NeighborhoodScraper) HandleResponse(j infra.Job, resp *http.Response, h
 		return nil, err
 	}
 
-	neighborhoods, err := ParseNeighborhoods(body.Bytes())
+	districts, err := ParsePoliceDistricts(body.Bytes())
 	if err != nil {
 		scraperLog.Error(err)
 		return nil, err
 	}
 
-	err = s.repo.StoreNeighborhoods(neighborhoods)
+	err = s.repo.StorePoliceDistricts(districts)
 	if err != nil {
 		scraperLog.Error(err)
 		return nil, err

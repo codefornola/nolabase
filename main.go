@@ -1,6 +1,6 @@
 package main
 
-import "github.com/bhelx/nolabase/cmd"
+import "github.com/codefornola/nolabase/cmd"
 
 func main() {
 	cmd.Execute()

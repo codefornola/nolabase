@@ -6,8 +6,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/bhelx/nolabase/infra"
-	"github.com/bhelx/nolabase/scraper"
+	"github.com/codefornola/nolabase/internal/infra"
+	"github.com/codefornola/nolabase/internal/scraper"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/spf13/cobra"
 )

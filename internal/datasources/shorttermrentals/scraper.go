@@ -10,7 +10,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/bhelx/nolabase/infra"
+	"github.com/codefornola/nolabase/internal/infra"
 	"github.com/jackc/pgx/v4/pgxpool"
 )
 

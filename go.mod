@@ -1,4 +1,4 @@
-module github.com/bhelx/nolabase
+module github.com/codefornola/nolabase
 
 go 1.15
 
