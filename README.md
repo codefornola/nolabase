@@ -12,7 +12,7 @@ This respository contains all of the tools to manage the database as well as the
 2. Liberate public data from walled gardens (e.g. see the [Tax Assessor dataset](./assessor/README.md))
 
 We hope the nolabase is not just a tool, but a community. By making it easy to use and
-providing a single interface to query the data, we hope that disparate memebers of the community can help
+providing a single interface to query the data, we hope that disparate members of the community can help
 each other with their analysis rather than doing the same work over and over again in silos.
 
 ## Questions
