@@ -1,0 +1,2 @@
+DROP SCHEMA infra CASCADE;
+DROP FUNCTION wgs84_transform;

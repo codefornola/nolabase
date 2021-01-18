@@ -1,0 +1,7 @@
+database:
+  user: "vagrant"
+  host: "localhost"
+  password: "!password9"
+  port: 5432
+  database_name: nolabase
+

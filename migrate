@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+export POSTGRESQL_URL='postgres://vagrant:!password9@localhost:5432/nolabase?sslmode=disable'
+
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+    exit 1
+fi
+
+if [ "$1" = "up" ]
+  then
+  migrate -database ${POSTGRESQL_URL} -path config/migrations up
+elif [ "$1" = "down" ]
+  then
+  migrate -database ${POSTGRESQL_URL} -path config/migrations down
+elif [ "$1" = "create" ]
+  then
+  migrate create -ext sql -dir config/migrations -seq $2
+fi
+
+
+

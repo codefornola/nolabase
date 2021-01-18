@@ -1,0 +1,1 @@
+DROP TABLE geometries.voting_precincts;

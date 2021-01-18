@@ -1,0 +1,1 @@
+DROP SCHEMA vacation_rentals CASCADE;
