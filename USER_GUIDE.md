@@ -35,7 +35,7 @@ Here are the details you'll need connect:
 * *name* or *database*: `nolabase`
 * *username*: `your-username`
 * *password*: `your-password`
-* *SSL*: `false` or `disabled`
+* *SSL*: `true` or `enabled`
 
 > *Note*: Depending on your client, may need to specify that this is a `PostgreSQL` database. 
 
