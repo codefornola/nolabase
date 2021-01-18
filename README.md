@@ -24,7 +24,7 @@ each other with their analysis rather than doing the same work over and over aga
 ### Where is the community?
 
 For the time being, we are congregating in the "NOLA Devs" Slack workspace. This is a public Slack
-workspace with over 1000 New Orleanins in the tech community.
+workspace with over 1000 New Orleanians from the tech community.
 
 To chat with us:
 
