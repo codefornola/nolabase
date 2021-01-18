@@ -30,7 +30,7 @@ For an easy and user-friendly option, we recommend [sqlectron](https://sqlectron
 
 Here are the details you'll need connect:
 
-* *host* or *address*: `159.203.85.12`
+* *host* or *address*: `nolabase.codeforneworleans.org`
 * *port*: `5432`
 * *name* or *database*: `nolabase`
 * *username*: `your-username`
