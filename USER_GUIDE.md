@@ -71,13 +71,23 @@ Results:
 
 ## Resources for Learning
 
+Here are some resources for learning the tools you'll likely need to use the database. Don't hesitate to reach out to the Slack community if you get stuck or need recommendations.
+
 ### Learn about SQL
 
-* TODO
+[SQL](https://en.wikipedia.org/wiki/SQL) (**S**tructured **Q**uery **L**anguage) is a [domain specific language](https://en.wikipedia.org/wiki/Domain-specific_language) for querying and analyzing data. It's less powerful than a general purpose programming language and is thus much simpler and easier to learn.
+
+[postgrestutorial.com](https://www.postgresqltutorial.com/) is a comprehensive guide if you want to understand SQL in depth. There are plenty of good courses to take and videos on youtube if you prefer to learn that way. When looking for places to learn, keep in mind that there are many *dialects* of SQL. They are mostly the same, but you'll probably have an easier time if the resource you are using is teaching with PostgreSQL.
 
 ### Learn about PostGIS
 
-* TODO
+[PostGIS](https://postgis.net/) is a special extension for Postgres that enables you to query and analyze [geospatial information](https://en.wikipedia.org/wiki/Geographic_information_system) the same way you would normal tabluar information. You'll need it if your analysis needs to understand where things are in space.
+
+The nolabase stores all geographic information using PostGIS types. e.g., we use `geometry.Point` for geographic locations and we use `gemoetry.MultiPolygon` for boundaries (like the shape of a neighborhood or a voter precinct). It also includes all the functions you need to query and do calculations on these types.
+
+To learn PostGIS, see [this workshop](https://postgis.net/workshops/postgis-intro/) as an introduction.
+See the [PostGIS documentation](https://postgis.net/docs/manual-3.1/) for reference.
+Also, again, youtube and courses are good resources as well if you prefer to learn that way.
 
 ## DataSources 
 
