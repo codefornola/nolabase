@@ -8,7 +8,7 @@
   - [Learn about PostGIS](#learn-about-postgis)
 - [DataSources](#datasources)
   - [Geometries](#geometries)
-  - [Tax Assessor Data (properties sales and values)](#tax-assessor-data-properties-sales-and-values)
+  - [Tax Assessor Data (property sales and values)](#tax-assessor-data-property-sales-and-values)
   - [Calls for Service](#calls-for-service)
   - [Vacation Rentals](#vacation-rentals)
   - [Short Term Rentals](#short-term-rentals)
@@ -116,7 +116,7 @@ DataSources are externally managed sources of data that are regularly pulled int
     * Description: The NOPD Subzones. The Subzone is the smallest level of jurisdiction used for reporting.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/nopd-police-subzones-reporting-districts)
 
-### Tax Assessor Data (properties sales and values)
+### Tax Assessor Data (property sales and values)
 
 * Schema: `assessor`
   * Table: `properties`
