@@ -7,6 +7,12 @@
   - [Learn about SQL](#learn-about-sql)
   - [Learn about PostGIS](#learn-about-postgis)
 - [DataSources](#datasources)
+  - [Geometries](#geometries)
+  - [Tax Assessor Data (properties sales and values)](#tax-assessor-data-properties-sales-and-values)
+  - [Calls for Service](#calls-for-service)
+  - [Vacation Rentals](#vacation-rentals)
+  - [Short Term Rentals](#short-term-rentals)
+  - [Restaurants](#restaurants)
 
 ## Accessing the Nolabase
 
@@ -78,6 +84,8 @@ Results:
 DataSources are externally managed sources of data that are regularly pulled into the Nolabase. We try to keep the convention of creating a [postgres schema](https://www.postgresql.org/docs/9.1/ddl-schemas.html) for each DataSource in order to keep them isolated. If you aren't familiar with it, think of it as a namespace. This is where the tables, functions, triggers, etc live for that DataSource. The one place we break this convention is
 `geometries` which is a special namespace for abstract geographic boundaries (think neighborhoods, police districts, etc) although I think we may change this before launching.
 
+### Geometries
+
 * Schema: `geometries`
   * Table: `neighborhoods`
     * Description: The statistical neighborhood areas.
@@ -97,6 +105,9 @@ DataSources are externally managed sources of data that are regularly pulled int
   * Table: `police_subzones`
     * Description: The NOPD Subzones. The Subzone is the smallest level of jurisdiction used for reporting.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/nopd-police-subzones-reporting-districts)
+
+### Tax Assessor Data (properties sales and values)
+
 * Schema: `assessor`
   * Table: `properties`
     * Description: The details found in the `Owner and Parcel Information` table on the property page. Also has location data.
@@ -107,18 +118,30 @@ DataSources are externally managed sources of data that are regularly pulled int
   * Table: `property_values`
     * Description: The details found in the `Sale/Transfer Information` table on the property page.
     * DataSource: [Tax Assessor Website](https://qpublic.net/la/orleans/)
+
+### Calls for Service
+
 * Schema: `cfs`
   * Table: `calls_for_service`
     * Description: Calls for service from 2011 to today.
     * DataSource: [data.nola.gov](https://data.nola.gov/Public-Safety-and-Preparedness/Call-for-Service-2020/hp7u-i9hf)
+
+### Vacation Rentals
+
 * Schema: `vacation_rentals`
   * Table: `properties`
     * Description: A merged dataset of the Hotels, Motels, B&Bs, and Boarding Houses and the Short-Term Rentals datasets.
     * DataSource: [data.nola.gov](https://data.nola.gov/Housing-Land-Use-and-Blight/Vacation-Rentals-Hotels-B-B-short-term-rentals-etc/rbhq-zbz9)
+
+### Short Term Rentals
+
 * Schema: `str`
   * Table: `permits`
     * Description: Short term rental permits.
     * DataSource: [data.nola.gov](https://data.nola.gov/Housing-Land-Use-and-Blight/Short-Term-Rental-Permit-Applications/en36-xvxg)
+
+### Restaurants
+
 * Schema: `restaurants`
   * Table: `records`
     * Description: All restaurants in the parish.
