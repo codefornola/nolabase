@@ -108,6 +108,8 @@ DataSources are externally managed sources of data that are regularly pulled int
   * Description: Short term rental permits
   * Table: `permits`
     * DataSource: [data.nola.gov](https://data.nola.gov/Housing-Land-Use-and-Blight/Short-Term-Rental-Permit-Applications/en36-xvxg)
-
+* Schema: `restaurants`
+  * Table: `records`
+    * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/restaurants?selectedAttribute=State)
 
 
