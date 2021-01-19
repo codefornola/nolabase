@@ -80,36 +80,48 @@ DataSources are externally managed sources of data that are regularly pulled int
 
 * Schema: `geometries`
   * Table: `neighborhoods`
+    * Description: The statistical neighborhood areas.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/neighborhood-statistical-areas)
   * Table: `council_districts`
+    * Description: City council districts and who represents them.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/4593a994e7644bcc91d9e1c096df1734_0)
   * Table: `voting_precincts`
+    * Description: Voting precincts and registered voter demographic information.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/total-of-registered-voters)
   * Table: `school_districts`
+    * Description: School Board Districts.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/school-board-districts)
   * Table: `police_districts`
+    * Description: The NOPD Zones and Districts.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/nopd-police-zones)
   * Table: `police_subzones`
+    * Description: The NOPD Subzones. The Subzone is the smallest level of jurisdiction used for reporting.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/nopd-police-subzones-reporting-districts)
 * Schema: `assessor`
   * Table: `properties`
+    * Description: The details found in the `Owner and Parcel Information` table on the property page. Also has location data.
     * DataSource: [Tax Assessor Website](https://qpublic.net/la/orleans/)
   * Table: `property_sales`
+    * Description: The details found in the `Value Information` table on the property page.
     * DataSource: [Tax Assessor Website](https://qpublic.net/la/orleans/)
   * Table: `property_values`
+    * Description: The details found in the `Sale/Transfer Information` table on the property page.
     * DataSource: [Tax Assessor Website](https://qpublic.net/la/orleans/)
 * Schema: `cfs`
   * Table: `calls_for_service`
+    * Description: Calls for service from 2011 to today.
     * DataSource: [data.nola.gov](https://data.nola.gov/Public-Safety-and-Preparedness/Call-for-Service-2020/hp7u-i9hf)
 * Schema: `vacation_rentals`
   * Table: `properties`
+    * Description: A merged dataset of the Hotels, Motels, B&Bs, and Boarding Houses and the Short-Term Rentals datasets.
     * DataSource: [data.nola.gov](https://data.nola.gov/Housing-Land-Use-and-Blight/Vacation-Rentals-Hotels-B-B-short-term-rentals-etc/rbhq-zbz9)
 * Schema: `str`
-  * Description: Short term rental permits
   * Table: `permits`
+    * Description: Short term rental permits.
     * DataSource: [data.nola.gov](https://data.nola.gov/Housing-Land-Use-and-Blight/Short-Term-Rental-Permit-Applications/en36-xvxg)
 * Schema: `restaurants`
   * Table: `records`
-    * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/restaurants?selectedAttribute=State)
+    * Description: All restaurants in the parish.
+    * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/restaurants)
 
 
