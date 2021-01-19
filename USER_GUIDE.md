@@ -18,7 +18,7 @@ username and password to connect. Currently, the only method to get an account i
 1. Enter your email in the [auto-invite tool](https://nola-slackin.herokuapp.com/) and follow the emailed instructions to get access to the workspace.
 2. Once you are in, head to the [#nolabase](https://nola.slack.com/archives/C01K1TBMRFA) channel and say hi.
 
-> **Note**:
+> *Note*:
 > You can run the Nolabase locally on your computer, but this isn't supported yet. If you are interested in doing this, ask the community for help.
 
 ### Install a Client
