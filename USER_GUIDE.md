@@ -13,6 +13,7 @@
   - [Vacation Rentals](#vacation-rentals)
   - [Short Term Rentals](#short-term-rentals)
   - [Restaurants](#restaurants)
+  - [NORTA GTFS (satic public transit information from the RTA)](#norta-gtfs-satic-public-transit-information-from-the-rta)
 
 ## Accessing the Nolabase
 
@@ -157,4 +158,23 @@ DataSources are externally managed sources of data that are regularly pulled int
     * Description: All restaurants in the parish.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/restaurants)
 
+### NORTA GTFS (satic public transit information from the RTA)
 
+These tables mirror the [GTFS specification](https://developers.google.com/transit/gtfs). We have only implemented half of them so it will
+need some more work until it's complete.
+
+The only way to get this data right now is by signing up for an email list and agreeing to the RTA's terms of service: https://www.norta.com/MyRTA/DataSubscription
+
+* Schema: `norta`
+  * Table: `routes`
+    * Description: Multimodal routes.
+    * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
+  * Table: `trips`
+    * Description: Multimodal trips.
+    * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
+  * Table: `shapes`
+    * Description: The geometries describing the routes.
+    * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
+  * Table: `stops`
+    * Description: Multimodal stop locations and names
+    * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
