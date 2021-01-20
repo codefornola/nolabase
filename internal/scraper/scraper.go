@@ -14,6 +14,7 @@ import (
 	"github.com/codefornola/nolabase/internal/datasources/callsforservice"
 	"github.com/codefornola/nolabase/internal/datasources/councildistricts"
 	"github.com/codefornola/nolabase/internal/datasources/neighborhoods"
+	"github.com/codefornola/nolabase/internal/datasources/norta"
 	"github.com/codefornola/nolabase/internal/datasources/policedistricts"
 	"github.com/codefornola/nolabase/internal/datasources/policesubzones"
 	"github.com/codefornola/nolabase/internal/datasources/restaurants"
@@ -52,6 +53,7 @@ var AllScrapers = map[string]ScraperBuilder{
 	(policedistricts.ScraperName):  func() Scraper { return policedistricts.NewScraper() },
 	(policesubzones.ScraperName):   func() Scraper { return policesubzones.NewScraper() },
 	(restaurants.ScraperName):      func() Scraper { return restaurants.NewScraper() },
+	(norta.ScraperName):            func() Scraper { return norta.NewScraper() },
 }
 
 type HttpCall func() (*http.Response, error)

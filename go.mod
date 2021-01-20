@@ -7,6 +7,7 @@ require (
 	github.com/cridenour/go-postgis v1.0.0
 	github.com/gammazero/deque v0.0.0-20201010052221-3932da5530cc // indirect
 	github.com/gammazero/workerpool v1.1.1
+	github.com/geops/gtfsparser v0.0.0-20180817212205-1cc2f4676115
 	github.com/jackc/pgx/v4 v4.10.1
 	github.com/markbates/pkger v0.17.1
 	github.com/mattn/go-colorable v0.1.8 // indirect
