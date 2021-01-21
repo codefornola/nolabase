@@ -6,7 +6,7 @@ import (
 	"github.com/geops/gtfsparser"
 	"github.com/jackc/pgx/v4"
 	"github.com/jackc/pgx/v4/pgxpool"
-	geom "github.com/twpayne/go-geom"
+	"github.com/twpayne/go-geom"
 	"github.com/twpayne/go-geom/encoding/ewkbhex"
 )
 
@@ -89,6 +89,36 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 		if err != nil {
 			return err
 		}
+		for _, t := range trip.StopTimes {
+			sql := `
+			INSERT INTO
+				norta.stop_times (
+					stop_id,
+					trip_id,
+					arrival_time,
+					departure_time,
+					stop_sequence,
+					stop_headsign,
+					pickup_type,
+					drop_off_type
+				)
+			VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+			`
+			_, err = tx.Exec(ctx,
+				sql,
+				t.Stop.Id,
+				trip.Id,
+				t.Arrival_time,
+				t.Departure_time,
+				t.Sequence,
+				t.Headsign,
+				t.Pickup_type,
+				t.Drop_off_type,
+			)
+			if err != nil {
+				return err
+			}
+		}
 	}
 
 	for _, shape := range feed.Shapes {
@@ -149,6 +179,68 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 			stop.Parent_station,
 			stop.Wheelchair_boarding == 1,
 			ewkb,
+		)
+		if err != nil {
+			return err
+		}
+	}
+
+	for _, agency := range feed.Agencies {
+		sql := `
+		INSERT INTO
+			norta.agency (
+				agency_id,
+				agency_name,
+				agency_url,
+				agency_timezone,
+				agency_lang,
+				agency_phone
+			)
+		VALUES ($1, $2, $3, $4, $5, $6);
+		`
+		_, err = tx.Exec(ctx,
+			sql,
+			agency.Id,
+			agency.Name,
+			agency.Url,
+			agency.Timezone,
+			agency.Lang,
+			agency.Phone,
+		)
+		if err != nil {
+			return err
+		}
+	}
+
+	for _, service := range feed.Services {
+		sql := `
+		INSERT INTO
+			norta.calendar (
+				service_id,
+				monday,
+				tuesday,
+				wednesday,
+				thursday,
+				friday,
+				saturday,
+				sunday,
+				start_date,
+				end_date
+			)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);
+		`
+		_, err = tx.Exec(ctx,
+			sql,
+			service.Id,
+			service.Daymap[1],
+			service.Daymap[2],
+			service.Daymap[3],
+			service.Daymap[4],
+			service.Daymap[5],
+			service.Daymap[6],
+			service.Daymap[0],
+			service.Start_date.GetTime(),
+			service.End_date.GetTime(),
 		)
 		if err != nil {
 			return err
