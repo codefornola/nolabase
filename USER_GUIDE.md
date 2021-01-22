@@ -116,6 +116,9 @@ DataSources are externally managed sources of data that are regularly pulled int
   * Table: `police_subzones`
     * Description: The NOPD Subzones. The Subzone is the smallest level of jurisdiction used for reporting.
     * DataSource: [NOLAGIS](https://portal-nolagis.opendata.arcgis.com/datasets/nopd-police-subzones-reporting-districts)
+  * Table: `bike_lanes`
+    * Description: Geometry and metadata about bike lanes in the city.
+    * DataSource: [data.nola.gov](https://data.nola.gov/Transportation-and-Infrastructure/Existing-Bike-Lanes/8npz-j6vy)
 
 ### Tax Assessor Data (property sales and values)
 
