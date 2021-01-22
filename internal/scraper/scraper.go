@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/codefornola/nolabase/internal/datasources/assessor"
+	"github.com/codefornola/nolabase/internal/datasources/bikelanes"
 	"github.com/codefornola/nolabase/internal/datasources/callsforservice"
 	"github.com/codefornola/nolabase/internal/datasources/councildistricts"
 	"github.com/codefornola/nolabase/internal/datasources/neighborhoods"
@@ -54,6 +55,7 @@ var AllScrapers = map[string]ScraperBuilder{
 	(policesubzones.ScraperName):   func() Scraper { return policesubzones.NewScraper() },
 	(restaurants.ScraperName):      func() Scraper { return restaurants.NewScraper() },
 	(norta.ScraperName):            func() Scraper { return norta.NewScraper() },
+	(bikelanes.ScraperName):        func() Scraper { return bikelanes.NewScraper() },
 }
 
 type HttpCall func() (*http.Response, error)
