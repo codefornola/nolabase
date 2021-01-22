@@ -181,3 +181,12 @@ The only way to get this data right now is by signing up for an email list and a
   * Table: `stops`
     * Description: Multimodal stop locations and names
     * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
+  * Table: `stop_times`
+    * Description: Times for the stops
+    * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
+  * Table: `agency`
+    * Description: Each agency involved
+    * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
+  * Table: `calendar`
+    * Description: Schedule reference calendar
+    * DataSource: [NORTA](https://www.norta.com/MyRTA/DataSubscription)
