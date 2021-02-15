@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Query the city of New Orleans',
   url: 'https://github.com/codefornola/nolabase',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'codefornola', // Usually your GitHub org/user name.
