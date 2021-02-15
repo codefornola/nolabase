@@ -13,7 +13,7 @@ New Orleans RTA data (public transportation). Follows the GTFS schema: https://d
 
 ## Tables
 
-### norta.routes
+### norta_routes
 
 ```
    Column    |            Type             | Collation | Nullable | Default
@@ -31,7 +31,7 @@ Indexes:
     "routes_pkey" PRIMARY KEY, btree (route_id)
 ```
 
-### norta.trips
+### norta_trips
 
 ```
         Column         |            Type             | Collation | Nullable | Default
@@ -52,7 +52,7 @@ Indexes:
     "norta_trips_shape_id_index" btree (shape_id)
 ```
 
-### norta.shapes
+### norta_shapes
 
 ```
    Column    |            Type             | Collation | Nullable | Default
@@ -65,7 +65,7 @@ Indexes:
     "norta_shapes_geom_index" gist (geom)
 ```
 
-### norta.stops
+### norta_stops
 
 ```
        Column        |            Type             | Collation | Nullable | Default
@@ -86,7 +86,7 @@ Indexes:
     "norta_stops_lng_lat_point_index" gist (lng_lat_point)
 ```
 
-### norta.stop_times
+### norta_stop_times
 
 ```
      Column     |            Type             | Collation | Nullable | Default
@@ -108,7 +108,7 @@ Check constraints:
     "stop_times_pickup_type_check" CHECK (pickup_type >= 0 AND pickup_type <= 3)
 ```
 
-### norta.agency
+### norta_agency
 
 ```
      Column      |            Type             | Collation | Nullable | Default
@@ -124,7 +124,7 @@ Indexes:
     "agency_pkey" PRIMARY KEY, btree (agency_id)
 ```
 
-### norta.calendar
+### norta_calendar
 
 ```
    Column    |            Type             | Collation | Nullable | Default

@@ -16,7 +16,7 @@ to share the data with the city's open data initiative so I'm releasing it here.
 
 ## Tables
 
-### assessor.properties
+### assessor_properties
 
 ```
        Column        |            Type             | Collation | Nullable |                     Default
@@ -47,7 +47,7 @@ Triggers:
     assessor_properties_wgs84_transformer BEFORE INSERT OR UPDATE ON assessor.properties FOR EACH ROW EXECUTE FUNCTION wgs84_transform()
 ```
 
-### assessor.property_sales
+### assessor_property_sales
 
 ```
          Column          |            Type             | Collation | Nullable |                       Default
@@ -65,7 +65,7 @@ Indexes:
     "property_sales_pkey" PRIMARY KEY, btree (id)
 ```
 
-### assessor.property_values
+### assessor_property_values
 
 ```
           Column           |            Type             | Collation | Nullable |                       Default

@@ -13,7 +13,7 @@ The school board district boundaries.
 
 ## Tables
 
-### geometries.school_districts
+### school_districts
 
 ```
    Column    |            Type             | Collation | Nullable |                         Default

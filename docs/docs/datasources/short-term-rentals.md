@@ -13,7 +13,7 @@ All permit applications for properties to be used as short-term rentals.
 
 ## Tables
 
-### str.permits
+### str_permits
 
 ```
          Column         |            Type             | Collation | Nullable |                 Default

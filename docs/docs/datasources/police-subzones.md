@@ -13,7 +13,7 @@ The police subzone boundaries. The smallest level of jurisdiction by NOPD.
 
 ## Tables
 
-### geometries.police_subzones
+### police_subzones
 
 ```
    Column    |            Type             | Collation | Nullable |                        Default

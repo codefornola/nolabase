@@ -49,7 +49,7 @@ gives us the name of every neighborhood geometry in the database
 sorted in the ascending direction:
 
 ```sql
-SELECT name FROM geometries.neighborhoods ORDER BY name ASC;
+SELECT name FROM neighborhoods ORDER BY name ASC;
 ```
 
 Results:

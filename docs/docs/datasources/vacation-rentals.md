@@ -13,7 +13,7 @@ A merged dataset of the Hotels, Motels, B&Bs, and Boarding Houses and the Short-
 
 ## Tables
 
-### vacation_rentals.properties
+### vacation_rentals
 
 ```
 Column        |            Type             | Collation | Nullable |                         Default

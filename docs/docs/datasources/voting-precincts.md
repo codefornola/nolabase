@@ -13,7 +13,7 @@ The city voting precincts and registered voter info.
 
 ## Tables
 
-### geometries.voting_precincts
+### voting_precincts
 
 ```
              Column             |            Type             | Collation | Nullable |                         Default

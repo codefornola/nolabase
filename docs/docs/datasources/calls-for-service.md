@@ -17,7 +17,7 @@ This table contains data from 2011 to present day
 
 ## Tables
 
-### cfs.calls_for_service
+### calls_for_service
 
 ```
        Column        |            Type             | Collation | Nullable |                      Default

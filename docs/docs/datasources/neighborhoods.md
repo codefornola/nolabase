@@ -13,7 +13,7 @@ The statistical neighborhood geometries.
 
 ## Tables
 
-### geometries.neighborhoods
+### neighborhoods
 
 ```
   Column  |          Type          | Collation | Nullable |                       Default

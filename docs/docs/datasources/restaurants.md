@@ -13,7 +13,7 @@ Locations of restaurants throughout New Orleans, as indicated by occupational li
 
 ## Tables
 
-### restaurants.records
+### restaurants
 
 ```
     Column     |            Type             | Collation | Nullable |                     Default

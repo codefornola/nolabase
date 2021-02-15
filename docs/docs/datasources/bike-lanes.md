@@ -13,7 +13,7 @@ Completed bike lanes across the public street network of New Orleans. Updated re
 
 ## Tables
 
-### geometries.bike_lanes
+### bike_lanes
 
 ```
      Column      |              Type              | Collation | Nullable | Default

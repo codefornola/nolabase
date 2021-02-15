@@ -13,7 +13,7 @@ The city council district boundaries.
 
 ## Tables
 
-### geometries.council_districts
+### council_districts
 
 ```
    Column    |            Type             | Collation | Nullable |                         Default

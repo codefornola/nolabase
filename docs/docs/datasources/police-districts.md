@@ -13,7 +13,7 @@ The police district boundaries.
 
 ## Tables
 
-### geometries.police_districts
+### police_districts
 
 ```
    Column    |            Type             | Collation | Nullable |                         Default
