@@ -18,6 +18,9 @@ to share the data with the city's open data initiative so I'm releasing it here.
 
 ### assessor_properties
 
+The details found in the `Owner and Parcel Information` table on the property page. Also has location data.
+
+
 ```
        Column        |            Type             | Collation | Nullable |                     Default
 ---------------------+-----------------------------+-----------+----------+-------------------------------------------------
@@ -49,6 +52,8 @@ Triggers:
 
 ### assessor_property_sales
 
+The details found in the `Value Information` table on the property page.
+
 ```
          Column          |            Type             | Collation | Nullable |                       Default
 -------------------------+-----------------------------+-----------+----------+-----------------------------------------------------
@@ -66,6 +71,8 @@ Indexes:
 ```
 
 ### assessor_property_values
+
+The details found in the `Sale/Transfer Information` table on the property page.
 
 ```
           Column           |            Type             | Collation | Nullable |                       Default
