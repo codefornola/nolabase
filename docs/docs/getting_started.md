@@ -5,15 +5,17 @@ sidebar_label: Getting Started
 slug: /getting-started
 ---
 
-## Meet the Community
+## Join the Community
 
 In order to access the nolabase, you need someone from the community
 to setup an account. Currently, the only way to reach us is to join our Slack channel:
 the [#nolabase](https://nola.slack.com/archives/C01K1TBMRFA) channel of the "NOLA Devs" Slack workspace.
 This is a public Slack workspace with over 1000 New Orleanians from the tech community.
 
+To join the Slack:
+
 1. Enter your email in the [auto-invite tool](https://nola-slackin.herokuapp.com/) and follow the emailed instructions to get access to the workspace.
-2. Once you logged in, navigate to the [#nolabase](https://nola.slack.com/archives/C01K1TBMRFA) channel and say helo.
+2. Once you are logged in, navigate to the [#nolabase](https://nola.slack.com/archives/C01K1TBMRFA) channel and say hello.
 
 ![nolabase-slack-channel.png](/img/nolabase-slack-channel.png)
 
@@ -38,7 +40,8 @@ To connect to the database, you need the following settings:
 
 :::tip
 If you aren't sure what to do with this information, or you are new to 
-SQL databases in general, we recommend you jump to the [learning](learning) section.
+SQL databases in general, we recommend you jump to the [learning](learning) section
+or ask help from the Slack community.
 :::
 
 ## Writing a Query

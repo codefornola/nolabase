@@ -13,7 +13,7 @@ With a SQL IDE, you write SQL and get back result rows. You can then export thes
 to import into another tool. Although this is not always the best tool for doing analysis, it's a good
 tool to have so you can explore the data and debug your SQL queries. Some IDEs give you the ability to
 make simple charts or visualizations from the results, but you won't get much control over it and you
-likely won't be able to do complicated things like maps.
+likely will not be able to do complex visualizations like maps.
 
 Here's what we recommend for IDEs:
 

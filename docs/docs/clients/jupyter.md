@@ -13,9 +13,11 @@ However, it can be a steep learning curve for new users (unless you already know
 
 ## Requirements
 
+We recommend going through the instructions to install [JupyterLab](https://jupyter.org/install.html).
 The one thing you'll need that doesn't come out of the box is a postgres client. We recommend [psycopg2](https://pypi.org/project/psycopg2/).
+You can install this with `pip` or whatever package manager you are using.
 
-Some other optional libraries you may want to consider:
+Some optional libraries you may want to consider installing:
 
 * [Pandas](https://pandas.pydata.org/)
   * For easy plotting and combining data.
@@ -40,13 +42,17 @@ con = psycopg2.connect(database="nolabase", user="benjamin.eckel", password=pass
     host="nolabase.codeforneworleans.org")
 ```
 
-This connects to the database and it prompts you for the password (so you don't have to store the password
-in your code where anyone can see it). You can now pass queries to the `con` object.
+Creating a connection to the nolabase is the minimum you need to do to start querying data.
+This code connects to the database and it prompts you for the password so you don't have to store the password
+in your code where anyone can see it. You can now pass queries to the `con` object.
 
 I also often find myself doing this pattern of loading up the result of a query into a GeoPandas
 dataframe then plotting the result:
 
 ```python
+import geopandas as gpd
+import contextily as ctx
+
 sql = """
 SELECT 
   properties.neighborhood,
