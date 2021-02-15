@@ -22,6 +22,7 @@ module.exports = {
         'datasources/short-term-rentals',
         'datasources/restaurants',
         'datasources/norta',
+        'datasources/voting-precincts',
     ],
     'Learning Resources': [
         'learning'
