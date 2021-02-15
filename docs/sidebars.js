@@ -2,6 +2,7 @@ module.exports = {
   someSidebar: {
     Nolabase: ['intro', 'getting_started', 'key_concepts'],
     Datasources: [
+        'datasources/tax-assessor',
         'datasources/neighborhoods',
         'datasources/council-districts',
         'datasources/school-districts',
