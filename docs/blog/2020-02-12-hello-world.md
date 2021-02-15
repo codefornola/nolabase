@@ -31,7 +31,7 @@ worked on had a number of barriers to entry that often required a programmer to 
 
 In each project, the primary barriers to entry were around extracting the data (esp. if it's not in a machine-readble
 form) and transforming and loading all the unique datasources into a tool for analysis. I also noticed
-that local group who is doing this type of work is basically doing this prep work over and over again
+that every local group doing this type of work is basically doing this prep work over and over again
 in their own silos. And because each process is unique, when they finish their analysis, they have a unique
 and complicated set of steps to reproduce the results. My idea was to solve all of these problems one
 time as a community, and then let the community worry about the parts they actually care about
