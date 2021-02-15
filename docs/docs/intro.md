@@ -11,7 +11,7 @@ It's used by community members performing analysis to better help them understan
 do their advocacy. It's also a platform to build tools and applications that help the community.
 
 :::warning
-This is still very much a Work-In-Progress and things will change rapdily at first.
+This is still very much a Work-In-Progress and things will change rapidly at first.
 If you want to use the nolabase for something mission critical, please reach out to the community
 first.
 :::

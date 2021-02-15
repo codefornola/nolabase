@@ -4,7 +4,7 @@ The nolabase is a postgres database containing all public information about the 
 This respository contains all of the tools to manage the database as well as the code to scrape the data sources.
 
 > *Warning*:
-> This is still very much a Work-In-Progress and things will change rapdily at first.
+> This is still very much a Work-In-Progress and things will change rapidly at first.
 > If you want to use the nolabase for something mission critical, please reach out to the community
 > first.
 
