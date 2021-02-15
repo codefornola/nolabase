@@ -1,7 +1,15 @@
 module.exports = {
   someSidebar: {
     Nolabase: ['intro', 'getting_started', 'key_concepts'],
+    Clients: [
+        'clients/intro',
+        'clients/sql-ide',
+        'clients/jupyter',
+        'clients/excel',
+        'clients/powerbi',
+    ],
     Datasources: [
+        'datasources/intro',
         'datasources/tax-assessor',
         'datasources/neighborhoods',
         'datasources/council-districts',
