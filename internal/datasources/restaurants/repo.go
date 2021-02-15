@@ -28,7 +28,7 @@ func (r *Repo) StoreRestaurantss(restaurants *Restaurants) error {
 	for _, feature := range restaurants.Features.Features {
 		sql := `
 		INSERT INTO
-			restaurants.records (
+			restaurants (
 				address,
 				business_name,
 				business_type,

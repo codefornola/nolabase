@@ -28,7 +28,7 @@ func (r *Repo) StorePoliceDistricts(districts *PoliceDistricts) error {
 	for _, feature := range districts.Features.Features {
 		sql := `
 		INSERT INTO
-			geometries.police_districts (
+			police_districts (
 				zone,
 				district,
 				geom

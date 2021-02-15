@@ -30,7 +30,7 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 	for _, route := range feed.Routes {
 		sql := `
 		INSERT INTO
-			norta.routes (
+			norta_routes (
 				route_id,
 				short_name,
 				long_name,
@@ -61,7 +61,7 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 	for _, trip := range feed.Trips {
 		sql := `
 		INSERT INTO
-			norta.trips (
+			norta_trips (
 				trip_id,
 				route_id,
 				service_id,
@@ -92,7 +92,7 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 		for _, t := range trip.StopTimes {
 			sql := `
 			INSERT INTO
-				norta.stop_times (
+				norta_stop_times (
 					stop_id,
 					trip_id,
 					arrival_time,
@@ -131,7 +131,7 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 		line := geom.NewLineStringFlat(geom.XY, coords)
 		sql := `
 		INSERT INTO
-			norta.shapes (
+			norta_shapes (
 				shape_id,
 				geom
 			)
@@ -151,7 +151,7 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 	for _, stop := range feed.Stops {
 		sql := `
 		INSERT INTO
-			norta.stops (
+			norta_stops (
 				stop_id,
 				stop_code,
 				stop_name,
@@ -188,7 +188,7 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 	for _, agency := range feed.Agencies {
 		sql := `
 		INSERT INTO
-			norta.agency (
+			norta_agency (
 				agency_id,
 				agency_name,
 				agency_url,
@@ -215,7 +215,7 @@ func (r *Repo) StoreGtfs(feed *gtfsparser.Feed) error {
 	for _, service := range feed.Services {
 		sql := `
 		INSERT INTO
-			norta.calendar (
+			norta_calendar (
 				service_id,
 				monday,
 				tuesday,

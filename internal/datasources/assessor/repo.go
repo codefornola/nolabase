@@ -34,7 +34,7 @@ func (c *Repo) StorePropertyPage(page *PropertyPage) error {
 
 	sql := `
 	UPDATE 
-		assessor.properties
+		assessor_properties
 	SET 
 		assessor_id = $1,
 		owner_name = $2,
@@ -73,7 +73,7 @@ func (c *Repo) StorePropertyPage(page *PropertyPage) error {
 	if len(page.values) > 0 {
 		sql = `
 	INSERT INTO
-		assessor.property_values (
+		assessor_property_values (
              property_id,
 			 year,
 			 land_value,
@@ -127,7 +127,7 @@ func (c *Repo) StorePropertyPage(page *PropertyPage) error {
 	if len(page.sales) > 0 {
 		sql = `
 	INSERT INTO
-		assessor.property_sales (
+		assessor_property_sales (
 			property_id,
 			price,
 			grantor,
@@ -162,7 +162,7 @@ func (c *Repo) StorePropertyPage(page *PropertyPage) error {
 	}
 
 	// finally, update the scraped_at time for this property
-	sql = "UPDATE assessor.properties SET scraped_at = now() where id = $1;"
+	sql = "UPDATE assessor_properties SET scraped_at = now() where id = $1;"
 	_, err = tx.Exec(ctx, sql, propertyId)
 	if err != nil {
 		tx.Rollback(ctx)
@@ -177,7 +177,7 @@ func (c *Repo) AllAssesorIds(action func(string) error) {
 	sql := `
 		SELECT
 			assessor_id
-		FROM assessor.properties;
+		FROM assessor_properties;
 	`
 	rows, err := c.conn.Query(context.Background(), sql)
 	if err != nil {
@@ -205,7 +205,7 @@ func (c *Repo) StoreNewProperties(properties []*Property) error {
 		valueStrings = append(valueStrings, fmt.Sprintf("($%d)", i+1))
 		valueArgs = append(valueArgs, prop.AssessorId)
 	}
-	stmt := fmt.Sprintf("INSERT INTO assessor.properties(assessor_id) VALUES %s ON CONFLICT (assessor_id) DO NOTHING;",
+	stmt := fmt.Sprintf("INSERT INTO assessor_properties(assessor_id) VALUES %s ON CONFLICT (assessor_id) DO NOTHING;",
 		strings.Join(valueStrings, ","))
 
 	_, err := c.conn.Exec(context.Background(), stmt, valueArgs...)
@@ -213,7 +213,7 @@ func (c *Repo) StoreNewProperties(properties []*Property) error {
 }
 
 func (c *Repo) FindUnseenAssessorIds(ids []string) ([]string, error) {
-	buf := bytes.NewBufferString("SELECT assessor_id FROM assessor.properties WHERE assessor_id IN(")
+	buf := bytes.NewBufferString("SELECT assessor_id FROM assessor_properties WHERE assessor_id IN(")
 	for i, v := range ids {
 		if i > 0 {
 			buf.WriteString(",")
@@ -263,7 +263,7 @@ func (c *Repo) FindProperty(id string) (*Property, error) {
 			building_area_sq_ft,
 			inserted_at,
 			updated_at
-		FROM assessor.properties
+		FROM assessor_properties
 		WHERE assessor_id = $1
 	`
 	err := c.conn.QueryRow(

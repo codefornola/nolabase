@@ -28,7 +28,7 @@ func (r *Repo) StorePermits(permits []*Permit) error {
 	for _, p := range permits {
 		sql := `
 		INSERT INTO
-			str.permits (
+			str_permits (
 				license_number,
 				license_type,
 				residential_subtype,

@@ -28,7 +28,7 @@ func (r *Repo) StoreVotingPrecincts(precincts *VotingPrecincts) error {
 	for _, feature := range precincts.Features.Features {
 		sql := `
 		INSERT INTO
-			geometries.voting_precincts (
+			voting_precincts (
 				name,
 				registered_voters,
 				registered_voters_white,

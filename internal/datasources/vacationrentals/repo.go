@@ -28,7 +28,7 @@ func (r *Repo) StoreRentals(rentals []*VacationRental) error {
 	for _, v := range rentals {
 		sql := `
 		INSERT INTO
-			vacation_rentals.properties (
+			vacation_rentals (
 				name,
 				address_name,
 				type,

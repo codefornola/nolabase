@@ -28,7 +28,7 @@ func (r *Repo) StoreNeighborhoods(neighborhoods *Neighborhoods) error {
 	for _, feature := range neighborhoods.Features.Features {
 		sql := `
 		INSERT INTO
-			geometries.neighborhoods (
+			neighborhoods (
 				name,
 				geom
 			)

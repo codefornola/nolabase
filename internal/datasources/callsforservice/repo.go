@@ -28,7 +28,7 @@ func (r *Repo) StoreCalls(calls []*ServiceCall) error {
 	for _, c := range calls {
 		sql := `
 		INSERT INTO
-			cfs.calls_for_service (
+			calls_for_service (
 				nopd_item,
 				type_text,
 				priority,

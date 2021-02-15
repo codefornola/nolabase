@@ -28,7 +28,7 @@ func (r *Repo) StoreBikeLanes(bikelanes *BikeLanes) error {
 	for _, feature := range bikelanes.Features.Features {
 		sql := `
 		INSERT INTO
-			geometries.bike_lanes (
+			bike_lanes (
 				object_id,
 				install_year,
 				install_quarter,
