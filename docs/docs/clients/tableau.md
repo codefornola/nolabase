@@ -5,8 +5,8 @@ sidebar_label: Tableau
 slug: /clients/tableau
 ---
 
-[Tableau](https://www.tableau.com/why-tableau/what-is-tableau) is visual analytics platform
-that makes it easier to create interactive visual analytics in the form of dashboards.
+[Tableau](https://www.tableau.com/why-tableau/what-is-tableau) is a visual analytics platform
+that makes it easy to create interactive visual analytics in the form of dashboards.
 
 It not only supports Postgres but also PostGIS which means you can utilize
 the nolabase's geometry data.
