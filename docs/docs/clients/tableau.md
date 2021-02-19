@@ -5,10 +5,10 @@ sidebar_label: Tableau
 slug: /clients/tableau
 ---
 
-[Tableau](https://www.tableau.com/why-tableau/what-is-tableau) is an easy to visual analytics platform
+[Tableau](https://www.tableau.com/why-tableau/what-is-tableau) is visual analytics platform
 that makes it easier to create interactive visual analytics in the form of dashboards.
 
-It not only supports Postgres but also PostGIS which means you can easily utilize
+It not only supports Postgres but also PostGIS which means you can utilize
 the nolabase's geometry data.
 
 ## Setup
@@ -18,7 +18,7 @@ When presented with the search dialog, search for `PostgreSQL`.
 
 ![Tableau Get Started](/img/tableau-start.png)
 
-After choosing `PostgreSQL`, enter in the following details (using your username
+After choosing `PostgreSQL`, enter the following details (using your username
 and password):
 
 ![Tableau Connection](/img/tableau-connect.png)
