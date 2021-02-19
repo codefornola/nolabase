@@ -4,6 +4,7 @@ module.exports = {
     Clients: [
         'clients/intro',
         'clients/sql-ide',
+        'clients/tableau',
         'clients/jupyter',
         'clients/excel',
         'clients/powerbi',
