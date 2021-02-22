@@ -8,6 +8,7 @@ module.exports = {
         'clients/jupyter',
         'clients/excel',
         'clients/powerbi',
+        'clients/qgis',
     ],
     Datasources: [
         'datasources/intro',
