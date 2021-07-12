@@ -38,7 +38,7 @@ For example, this query asks, "Who has permits for short term rentals (AirBnBs) 
 ```
 SELECT contact_name
 FROM str_permits
-WHERE current_status = issued
+WHERE current_status = 'issued'
 ```
 
 "SELECT" tells the computer what data you want to see. In this case, we're asking to see the licensees' names. If you want to see all the columns at once, you can type an asterisk "*" to mean "all."
