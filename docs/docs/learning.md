@@ -64,7 +64,7 @@ For example, this query asks for the names of phone numbers of everyone with act
 ```
 SELECT contact_name, contact_phone
 FROM str_permits
-WHERE current_status = issued
+WHERE current_status = 'issued'
 GROUP BY contact_name
 ORDER BY contact_name ASC
 ```
