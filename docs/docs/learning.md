@@ -41,7 +41,7 @@ FROM str_permits
 WHERE current_status = 'issued'
 ```
 
-"SELECT" tells the computer what data you want to see. In this case, we're asking to see the licensees' names. If you want to see all the columns at once, you can type an asterisk "*" to mean "all."
+`SELECT` tells the computer what data you want to see. In this case, we're asking to see the licensees' names. If you want to see all the columns at once, you can type an asterisk `*` to mean "all."
 
 "FROM" tells the computer where this data is coming from. In this case, our dataset is called str_permits, short for "short term rental permits."
 
